@@ -5,7 +5,7 @@
     End Sub
 
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Not ModControl.Login.loadLogin() Then
+        If Not Login.loadLogin() Then
             MsgBox("As this is the first time you have launched this program, you will have to create a new user." & vbCrLf &
                    "Please enter a memorable username and password.")
             Dim newForm As New FrmCreateLogin
@@ -15,7 +15,7 @@
     End Sub
 
     Private Sub ButtonSubmit_Click(sender As Object, e As EventArgs) Handles ButtonSubmit.Click
-        If ModControl.Login.checkLogin(TxtUsername.Text, TxtPassword.Text) Then
+        If Login.checkLogin(TxtUsername.Text, TxtPassword.Text) Then
             MsgBox("Success!")
         Else
             MsgBox("The username and password do not match. Please try again.")
