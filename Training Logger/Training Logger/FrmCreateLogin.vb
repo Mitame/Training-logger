@@ -39,6 +39,9 @@
         End If
 
         ModControl.Login.saveLogin(TxtPassword.Text, TxtUsername.Text)
-        MsgBox("Saved!")
+        MsgBox("Your login details have been saved. You may now log in using the username and password you just entered.")
+        Dim newForm As New FrmLogin
+        newForm.Show()
+        Me.Close()
     End Sub
 End Class
