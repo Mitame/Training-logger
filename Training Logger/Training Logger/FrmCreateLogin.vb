@@ -1,4 +1,4 @@
-﻿Public Class FrmCreateLogin
+﻿Public Class FrmCreateAdmin
 
     Private Sub TxtPassConfirm_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtPassConfirm.KeyDown
         If e.KeyCode = Keys.Enter Then
