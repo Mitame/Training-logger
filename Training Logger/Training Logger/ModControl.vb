@@ -3,9 +3,23 @@ Imports System.Security.Cryptography
 
 Module Login
 
-    Dim passwordHash As String
-    Dim username As String
+    Dim passwordHash() As String
+    Dim username() As String
     Dim loginLocation As String = My.Computer.FileSystem.CombinePath(System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "JLC\TrainingLog\login")
+
+    Public Class User
+        Public id As Integer
+        Public username As String
+        Public passwordHash As String
+
+        Public Sub New(userID As Integer, username As String, passwordHash As String)
+            Me.id = userID
+            Me.username = username
+            Me.passwordHash = passwordHash
+        End Sub
+
+
+    End Class
 
     Public Sub createDirectory()
         My.Computer.FileSystem.CreateDirectory(My.Computer.FileSystem.GetParentPath(loginLocation))
@@ -18,11 +32,21 @@ Module Login
     Public Function loadLogin()
         Try
             Dim loginFile = My.Computer.FileSystem.ReadAllText(Login.loginLocation)
-            Dim temp = loginFile.Split(vbCrLf)
+            Dim users = loginFile.Split(vbCrLf)
+            Array.Resize(Login.username, users.Length)
+            Array.Resize(Login.passwordHash, users.Length)
+            Dim split() As String
+            For userID As Integer = 0 To users.Length - 1
+                If userID <> 0 Then
+                    split = (users(userID).Substring(1, users(userID).Length - 1)).Split(",")
+                Else
+                    split = users(userID).Split(",")
+                End If
 
-            Console.WriteLine(temp.Length)
-            Login.username = temp(0)
-            Login.passwordHash = temp(1).Substring(1, temp(1).Length - 1)
+                Login.username(userID) = split(0)
+                Login.passwordHash(userID) = split(1)
+                Console.WriteLine(userID & ", " & Login.username(userID) & ", " & Login.passwordHash(userID))
+            Next userID
         Catch exception As System.IO.DirectoryNotFoundException
             Login.createDirectory()
             Return False
@@ -46,14 +70,14 @@ Module Login
     End Function
 
     Public Function checkLogin(username As String, password As String)
-        If username = Login.username And GenerateHash(password) = Login.passwordHash Then
-            Return True
-        Else
-            Console.WriteLine(username & " = " & Login.username)
-            Console.WriteLine(GenerateHash(password) & " = " & Login.passwordHash)
-            Return False
+        If Login.username.Contains(username) Then
+            Dim userID = Array.IndexOf(Login.username, username)
+            If Login.passwordHash(userID) = GenerateHash(password) Then
+                Return New User(userID, Login.username(userID), Login.passwordHash(userID))
+            Else
+            End If
         End If
-
+        Return New User(-1, "", "")
     End Function
 
 
