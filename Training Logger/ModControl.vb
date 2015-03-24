@@ -26,7 +26,7 @@ Module Login
     End Sub
 
     Public Sub saveLogin(password As String, username As String)
-        My.Computer.FileSystem.WriteAllText(Login.loginLocation, username & vbCrLf & Login.GenerateHash(password), False)
+        My.Computer.FileSystem.WriteAllText(Login.loginLocation, username & "," & Login.GenerateHash(password) & vbCrLf, True)
     End Sub
 
     Public Function loadLogin()
@@ -42,10 +42,11 @@ Module Login
                 Else
                     split = users(userID).Split(",")
                 End If
-
-                Login.username(userID) = split(0)
-                Login.passwordHash(userID) = split(1)
-                Console.WriteLine(userID & ", " & Login.username(userID) & ", " & Login.passwordHash(userID))
+                If split.Length = 2 Then
+                    Login.username(userID) = split(0)
+                    Login.passwordHash(userID) = split(1)
+                    Console.WriteLine(userID & ", " & Login.username(userID) & ", " & Login.passwordHash(userID))
+                End If
             Next userID
         Catch exception As System.IO.DirectoryNotFoundException
             Login.createDirectory()
