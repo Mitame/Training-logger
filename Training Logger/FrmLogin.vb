@@ -1,7 +1,6 @@
 ﻿Public Class FrmLogin
 
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         If My.Settings.skipLogin = "True" Then
             Dim newForm As New FrmAdmin
             newForm.Show()
@@ -9,7 +8,7 @@
         End If
 
         If Not Login.loadLogin() Then
-            MsgBox("As this is the first time you have launched this program, you will have to create a new user." & vbCrLf &
+            MsgBox("As this is the first time you have launched this program, you will have to create a new user." & vbLf &
                    "Please enter a memorable username and password.")
             Dim newForm As New FrmCreateAdmin
             newForm.Show()
@@ -29,7 +28,7 @@
                 newform.Show()
                 Me.Close()
             Else
-                Dim newform As New FrmUser
+                Dim newform As New FrmUser(user)
                 newform.Show()
                 Me.Close()
             End If
