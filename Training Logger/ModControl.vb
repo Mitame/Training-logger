@@ -5,7 +5,7 @@ Public Module Login
 
     Dim passwordHash() As String
     Public username() As String
-    Dim users() As User
+    Public users() As User
     Dim loginLocation As String = My.Computer.FileSystem.CombinePath(System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "JLC\TrainingLog\login")
 
     Public Class User
