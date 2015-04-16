@@ -44,7 +44,7 @@ Public Module Login
             Array.Resize(Login.passwordHash, users.Length)
             Array.Resize(Login.users, users.Length)
             Dim split() As String
-            For userID As Integer = 0 To users.Length - 1
+            For userID As Integer = 0 To users.Length - 2
                 'If userID <> 0 Then
                 'split = (users(userID).Substring(1, users(userID).Length - 1)).Split(",")
                 'Else
@@ -115,7 +115,8 @@ Public Module Login
             contact = oldUser.contact
         End If
 
-        lines(userID) = username & "," & Login.GenerateHash(password) & "," & firstName & "," & lastName & "," & contact & vbLf
+        lines(userID) = username & "," & password & "," & firstName & "," & lastName & "," & contact & vbLf
+        My.Computer.FileSystem.WriteAllText(loginLocation, Join(lines, vbLf), False)
     End Sub
 End Module
 

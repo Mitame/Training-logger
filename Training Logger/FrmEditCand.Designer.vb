@@ -23,26 +23,26 @@ Partial Class FrmEditCand
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEditCand))
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnNew = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BtnEdit = New System.Windows.Forms.Button()
+        Me.BtnQuit = New System.Windows.Forms.Button()
         Me.LbData = New System.Windows.Forms.ListBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button1
+        'BtnNew
         '
-        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.BtnNew.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.AutoSize = True
-        Me.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button1.Location = New System.Drawing.Point(142, 310)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(90, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "New Candidate"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnNew.AutoSize = True
+        Me.BtnNew.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BtnNew.Location = New System.Drawing.Point(153, 310)
+        Me.BtnNew.Name = "BtnNew"
+        Me.BtnNew.Size = New System.Drawing.Size(90, 23)
+        Me.BtnNew.TabIndex = 0
+        Me.BtnNew.Text = "New Candidate"
+        Me.BtnNew.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel1
         '
@@ -55,9 +55,9 @@ Partial Class FrmEditCand
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Button3, 3, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button2, 2, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button1, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.BtnEdit, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.BtnQuit, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.BtnNew, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.LbData, 0, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(13, 13)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -68,31 +68,31 @@ Partial Class FrmEditCand
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(576, 336)
         Me.TableLayoutPanel1.TabIndex = 1
         '
-        'Button3
+        'BtnEdit
         '
-        Me.Button3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.BtnEdit.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.AutoSize = True
-        Me.Button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button3.Location = New System.Drawing.Point(329, 310)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(119, 23)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Quit without saving"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BtnEdit.AutoSize = True
+        Me.BtnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BtnEdit.Location = New System.Drawing.Point(340, 310)
+        Me.BtnEdit.Name = "BtnEdit"
+        Me.BtnEdit.Size = New System.Drawing.Size(113, 23)
+        Me.BtnEdit.TabIndex = 3
+        Me.BtnEdit.Text = "Edit Candidate"
+        Me.BtnEdit.UseVisualStyleBackColor = True
         '
-        'Button2
+        'BtnQuit
         '
-        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.BtnQuit.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.AutoSize = True
-        Me.Button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button2.Location = New System.Drawing.Point(238, 310)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(85, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Save and Quit"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnQuit.AutoSize = True
+        Me.BtnQuit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BtnQuit.Location = New System.Drawing.Point(249, 310)
+        Me.BtnQuit.Name = "BtnQuit"
+        Me.BtnQuit.Size = New System.Drawing.Size(85, 23)
+        Me.BtnQuit.TabIndex = 2
+        Me.BtnQuit.Text = "Save and Quit"
+        Me.BtnQuit.UseVisualStyleBackColor = True
         '
         'LbData
         '
@@ -122,9 +122,9 @@ Partial Class FrmEditCand
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents BtnNew As System.Windows.Forms.Button
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents BtnEdit As System.Windows.Forms.Button
+    Friend WithEvents BtnQuit As System.Windows.Forms.Button
     Friend WithEvents LbData As System.Windows.Forms.ListBox
 End Class
