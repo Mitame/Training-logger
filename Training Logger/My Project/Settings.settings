@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="skipLogin" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
