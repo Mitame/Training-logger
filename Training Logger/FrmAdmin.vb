@@ -2,7 +2,9 @@
     Dim ignoreClose As Boolean = False
     Private Sub BtnEditCand_Click(sender As Object, e As EventArgs) Handles BtnEditCand.Click
         Me.ignoreClose = True
-        Throw New NotImplementedException
+        Dim newform As New FrmEditCand
+        newform.Show()
+        Me.Close()
     End Sub
 
     Private Sub BtnResults_Click(sender As Object, e As EventArgs) Handles BtnResults.Click

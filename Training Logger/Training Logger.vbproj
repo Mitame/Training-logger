@@ -98,6 +98,12 @@
     <Compile Include="FrmAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmEditUser.Designer.vb">
+      <DependentUpon>FrmEditUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmUser.Designer.vb">
       <DependentUpon>FrmUser.vb</DependentUpon>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditUser.resx">
+      <DependentUpon>FrmEditUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUser.resx">
       <DependentUpon>FrmUser.vb</DependentUpon>
