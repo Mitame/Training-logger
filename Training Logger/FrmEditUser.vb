@@ -1,6 +1,7 @@
 ﻿Public Class FrmEditUser
 
     Dim isEditting As Integer = -1
+    Dim parform As FrmEditCand
 
     Public Sub New()
 
@@ -9,6 +10,15 @@
 
         ' Add any initialization after the InitializeComponent() call.
 
+    End Sub
+    Public Sub New(parent As FrmEditCand)
+        Me.New()
+        Me.parform = parent
+    End Sub
+
+    Public Sub New(UserID As Integer, parent As FrmEditCand)
+        Me.New(UserID)
+        Me.parform = parent
     End Sub
     Public Sub New(userID As Integer)
         InitializeComponent()
@@ -29,7 +39,6 @@
         BtnAdd.Text = "Commit"
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
-
         If TxtUsername.Text.Contains(",") Or TxtFirstName.Text.Contains(",") Or TxtLastName.Text.Contains(",") Or TxtContact.Text.Contains(",") Then
             MsgBox("You may not use commas (',') in any of the following fields:" & vbLf &
                    " - Username" & vbLf &
@@ -42,18 +51,25 @@
 
         If Login.username.Contains(TxtUsername.Text) And isEditting = -1 Then
             MsgBox("Username has already been used.")
+            Return
         End If
 
         If TxtContact.Text <> "" And TxtFirstName.Text <> "" And TxtLastName.Text <> "" And TxtPassword.Text <> "" And TxtUsername.Text <> "" Then
             If isEditting <> -1 Then
+                If TxtPassword.Text = "Unchanged" Then
+                    TxtPassword.Text = ""
+                End If
+
                 Login.editLogin(isEditting, TxtUsername.Text, TxtPassword.Text, TxtFirstName.Text, TxtLastName.Text, TxtContact.Text)
                 MsgBox("User '" & TxtUsername.Text & "' editted!")
                 Login.loadLogin()
+                Me.parform.loadUsers()
                 Me.Close()
             Else
                 Login.saveLogin(TxtUsername.Text, TxtPassword.Text, TxtFirstName.Text, TxtLastName.Text, TxtContact.Text)
                 MsgBox("User '" & TxtUsername.Text & "' created!")
                 Login.loadLogin()
+                Me.parform.loadUsers()
                 Me.Close()
             End If
 
