@@ -28,7 +28,6 @@
                                  user.contact.PadRight(40) & vbTab &
                                  user.passwordHash)
             Catch e As System.NullReferenceException
-                Console.WriteLine(e.Source)
             End Try
 
 

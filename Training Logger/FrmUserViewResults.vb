@@ -8,11 +8,9 @@
     Private Sub loadResults()
         Dim results() As ModResults.result = ModResults.getResults(user.id)
         results.ToString()
-        Console.WriteLine(results(0).getUserID())
         LbData.Items.Clear()
         LbData.Items.Add("Timestamp".PadRight(40) & vbTab & "Activity".PadRight(40) & vbTab & "Time (Seconds)")
         For resultIndex As Integer = 0 To results.Length - 1
-            Console.WriteLine(results(resultIndex).getUserID())
             Dim dateToShow As DateTime = results(resultIndex).getTimestamp()
             LbData.Items.Add((dateToShow.Day.ToString() & "-" & dateToShow.Month.ToString() & "-" & dateToShow.Year.ToString() & " " &
                               dateToShow.Hour.ToString() & ":" & dateToShow.Minute.ToString() & ":" & dateToShow.Second.ToString()).PadRight(40) & vbTab &

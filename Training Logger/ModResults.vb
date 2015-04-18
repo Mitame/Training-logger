@@ -27,7 +27,6 @@
         End Function
 
         Public Function getTimestamp() As Date
-            Console.WriteLine(Me.timestamp.ToString())
             Return Me.timestamp
         End Function
 
@@ -64,7 +63,6 @@
         For resultID As Integer = 0 To allResults.Length - 1
             If allResults(resultID).getUserID() = userID Then
                 Array.Resize(retArray, retArray.Length + 1)
-                Console.WriteLine(allResults(resultID))
                 retArray(retArray.Length - 1) = allResults(resultID)
             End If
         Next
