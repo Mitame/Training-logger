@@ -37,7 +37,7 @@ Partial Class FrmEditCand
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnNew.AutoSize = True
         Me.BtnNew.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.BtnNew.Location = New System.Drawing.Point(153, 310)
+        Me.BtnNew.Location = New System.Drawing.Point(151, 310)
         Me.BtnNew.Name = "BtnNew"
         Me.BtnNew.Size = New System.Drawing.Size(90, 23)
         Me.BtnNew.TabIndex = 0
@@ -74,9 +74,9 @@ Partial Class FrmEditCand
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnEdit.AutoSize = True
         Me.BtnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.BtnEdit.Location = New System.Drawing.Point(340, 310)
+        Me.BtnEdit.Location = New System.Drawing.Point(338, 310)
         Me.BtnEdit.Name = "BtnEdit"
-        Me.BtnEdit.Size = New System.Drawing.Size(113, 23)
+        Me.BtnEdit.Size = New System.Drawing.Size(114, 23)
         Me.BtnEdit.TabIndex = 3
         Me.BtnEdit.Text = "Edit Candidate"
         Me.BtnEdit.UseVisualStyleBackColor = True
@@ -87,7 +87,7 @@ Partial Class FrmEditCand
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnQuit.AutoSize = True
         Me.BtnQuit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.BtnQuit.Location = New System.Drawing.Point(249, 310)
+        Me.BtnQuit.Location = New System.Drawing.Point(247, 310)
         Me.BtnQuit.Name = "BtnQuit"
         Me.BtnQuit.Size = New System.Drawing.Size(85, 23)
         Me.BtnQuit.TabIndex = 2

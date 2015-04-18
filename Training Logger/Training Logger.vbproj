@@ -110,6 +110,18 @@
     <Compile Include="FrmUser.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmUserAddResult.Designer.vb">
+      <DependentUpon>FrmUserAddResult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUserAddResult.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserViewResults.Designer.vb">
+      <DependentUpon>FrmUserViewResults.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUserViewResults.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModControl.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -126,6 +138,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ModResults.vb" />
     <Compile Include="Settings.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +159,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUser.resx">
       <DependentUpon>FrmUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserAddResult.resx">
+      <DependentUpon>FrmUserAddResult.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserViewResults.resx">
+      <DependentUpon>FrmUserViewResults.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
