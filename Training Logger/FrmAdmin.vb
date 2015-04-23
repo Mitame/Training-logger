@@ -7,7 +7,7 @@
         Me.Close()
     End Sub
 
-    Private Sub BtnResults_Click(sender As Object, e As EventArgs) Handles BtnResults.Click
+    Private Sub BtnResults_Click(sender As Object, e As EventArgs)
         Me.ignoreClose = True
         Throw New NotImplementedException
     End Sub

@@ -14,15 +14,17 @@
         InitializeComponent()
         Me.user = user
     End Sub
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmBSport.SelectedIndexChanged
-
-    End Sub
 
     Private Sub FrmUserAddResult_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CmBSport.SelectedIndex = 0
     End Sub
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
+        If Val(TxtTime.Text) <= 0 Then
+            MsgBox("Please enter a realistic time.")
+            Return
+        End If
+
         If CmBSport.SelectedIndex <> -1 And TxtTime.Text <> "" Then
             ModResults.saveResult(user.id, DateTime.Now, TxtTime.Text, CmBSport.Items(CmBSport.SelectedIndex))
             MsgBox("Result Saved")

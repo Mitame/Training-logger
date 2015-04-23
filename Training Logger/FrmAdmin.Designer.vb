@@ -25,7 +25,6 @@ Partial Class FrmAdmin
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAdmin))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BtnResults = New System.Windows.Forms.Button()
         Me.BtnEditCand = New System.Windows.Forms.Button()
         Me.BtnViewLeague = New System.Windows.Forms.Button()
         Me.BtnQuit = New System.Windows.Forms.Button()
@@ -41,7 +40,6 @@ Partial Class FrmAdmin
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.BtnResults, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.BtnEditCand, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.BtnViewLeague, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.BtnQuit, 1, 2)
@@ -63,17 +61,6 @@ Partial Class FrmAdmin
         Me.Label1.Size = New System.Drawing.Size(127, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "What do you want to do?"
-        '
-        'BtnResults
-        '
-        Me.BtnResults.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnResults.Location = New System.Drawing.Point(3, 45)
-        Me.BtnResults.Name = "BtnResults"
-        Me.BtnResults.Size = New System.Drawing.Size(156, 23)
-        Me.BtnResults.TabIndex = 1
-        Me.BtnResults.Text = "Modify Results"
-        Me.BtnResults.UseVisualStyleBackColor = True
         '
         'BtnEditCand
         '
@@ -127,7 +114,6 @@ Partial Class FrmAdmin
     End Sub
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents BtnResults As System.Windows.Forms.Button
     Friend WithEvents BtnViewLeague As System.Windows.Forms.Button
     Friend WithEvents BtnEditCand As System.Windows.Forms.Button
     Friend WithEvents BtnQuit As System.Windows.Forms.Button
