@@ -1,4 +1,5 @@
 ﻿Module ModResults
+    Public activites() As String = {"Swimming", "Cycling", "Running"}
     Dim allResults() As result
     Dim hasLoaded As Boolean = False
     Dim resultsLocation As String = My.Computer.FileSystem.CombinePath(System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "JLC\TrainingLog\results")

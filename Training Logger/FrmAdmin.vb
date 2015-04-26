@@ -7,14 +7,11 @@
         Me.Close()
     End Sub
 
-    Private Sub BtnResults_Click(sender As Object, e As EventArgs)
-        Me.ignoreClose = True
-        Throw New NotImplementedException
-    End Sub
-
     Private Sub BtnViewLeague_Click(sender As Object, e As EventArgs) Handles BtnViewLeague.Click
         Me.ignoreClose = True
-        Throw New NotImplementedException
+        Dim newform As New FrmRank
+        newform.Show()
+        Me.Close()
     End Sub
 
     Private Sub onQuit(sender As Object, e As FormClosingEventArgs)
@@ -36,4 +33,5 @@
             Me.onQuit(sender, e)
         End If
     End Sub
+
 End Class

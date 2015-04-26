@@ -16,7 +16,11 @@
     End Sub
 
     Private Sub FrmUserAddResult_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        For x As Integer = 0 To ModResults.activites.length - 1
+            CmBSport.Items.Add(ModResults.activites(x))
+        Next
         CmBSport.SelectedIndex = 0
+
     End Sub
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
@@ -57,4 +61,5 @@
             Newform.Show()
         End If
     End Sub
+
 End Class

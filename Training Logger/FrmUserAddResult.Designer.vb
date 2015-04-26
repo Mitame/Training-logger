@@ -79,7 +79,6 @@ Partial Class FrmUserAddResult
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CmBSport.FormattingEnabled = True
-        Me.CmBSport.Items.AddRange(New Object() {"Swimming", "Running", "Cycling"})
         Me.CmBSport.Location = New System.Drawing.Point(90, 3)
         Me.CmBSport.Name = "CmBSport"
         Me.CmBSport.Size = New System.Drawing.Size(181, 21)

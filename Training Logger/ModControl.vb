@@ -15,6 +15,7 @@ Public Module Login
         Public firstName As String
         Public lastName As String
         Public contact As String
+        Public rank As Decimal
 
         Public Sub New(userID As Integer, username As String, passwordHash As String, firstName As String, lastName As String, contact As String)
             Me.id = userID
@@ -26,6 +27,51 @@ Public Module Login
                 Me.contact = contact
             End If
         End Sub
+
+        Public Function getRank(Optional recalculate As Boolean = True) As Decimal
+            If Not IsNothing(Me.rank) And Not recalculate Then
+                Return Me.rank
+            End If
+            Dim results = ModResults.getResults(Me.id)
+            Dim rankValue(ModResults.activites.Length) As Decimal
+            Dim sportResults() As Decimal = {}
+            Dim mean As Decimal = 0
+            Dim sd As Decimal = 0
+            Me.rank = 0
+
+
+            For sportIndex As Integer = 0 To ModResults.activites.Length - 1
+                Console.WriteLine("Calculating `" & ModResults.activites(sportIndex) & "` ranking for `" & Me.username & "`.")
+                For resultIndex As Integer = 0 To results.Length - 1
+                    If results(resultIndex).getSport() = ModResults.activites(sportIndex) Then
+                        Array.Resize(sportResults, sportResults.Length + 1)
+                        sportResults(sportResults.Length - 1) = results(resultIndex).getTime()
+                    End If
+                Next
+                Try
+                    For x As Integer = 0 To sportResults.Length - 1
+                        mean += sportResults(x)
+                    Next
+                    mean = mean / sportResults.Length
+
+                    For x As Integer = 0 To sportResults.Length - 1
+                        sd += (sportResults(x) - mean) ^ 2
+                    Next
+                    sd = sd / sportResults.Length
+                    sd = Math.Sqrt(sd)
+
+                    rankValue(sportIndex) = sd + mean - sportResults.Length
+                    Me.rank += rankValue(sportIndex)
+
+                Catch e As System.DivideByZeroException
+                    Me.rank += 10000
+                End Try
+            Next
+
+
+
+            Return Me.rank
+        End Function
     End Class
 
     Public Sub createDirectory()

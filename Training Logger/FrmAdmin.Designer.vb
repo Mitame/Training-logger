@@ -80,7 +80,7 @@ Partial Class FrmAdmin
         Me.BtnViewLeague.Location = New System.Drawing.Point(165, 16)
         Me.BtnViewLeague.Name = "BtnViewLeague"
         Me.BtnViewLeague.Size = New System.Drawing.Size(156, 23)
-        Me.BtnViewLeague.TabIndex = 2
+        Me.BtnViewLeague.TabIndex = 1
         Me.BtnViewLeague.Text = "View League Tables"
         Me.BtnViewLeague.UseVisualStyleBackColor = True
         '

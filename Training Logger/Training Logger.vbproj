@@ -104,6 +104,12 @@
     <Compile Include="FrmEditUser.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmRank.Designer.vb">
+      <DependentUpon>FrmRank.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRank.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmUser.Designer.vb">
       <DependentUpon>FrmUser.vb</DependentUpon>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEditUser.resx">
       <DependentUpon>FrmEditUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRank.resx">
+      <DependentUpon>FrmRank.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUser.resx">
       <DependentUpon>FrmUser.vb</DependentUpon>
