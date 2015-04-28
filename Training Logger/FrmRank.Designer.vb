@@ -64,7 +64,7 @@ Partial Class FrmRank
         Me.ClientSize = New System.Drawing.Size(600, 261)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "FrmRank"
-        Me.Text = "FrmRank"
+        Me.Text = "Training Logger - League Tables"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
