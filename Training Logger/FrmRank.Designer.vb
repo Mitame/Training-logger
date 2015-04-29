@@ -22,6 +22,7 @@ Partial Class FrmRank
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRank))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.LbRanks = New System.Windows.Forms.ListBox()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -63,6 +64,7 @@ Partial Class FrmRank
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 261)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmRank"
         Me.Text = "Training Logger - League Tables"
         Me.TableLayoutPanel1.ResumeLayout(False)

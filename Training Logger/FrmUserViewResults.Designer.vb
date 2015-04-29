@@ -22,6 +22,7 @@ Partial Class FrmUserViewResults
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmUserViewResults))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.LbData = New System.Windows.Forms.ListBox()
         Me.BtnAdd = New System.Windows.Forms.Button()
@@ -114,6 +115,7 @@ Partial Class FrmUserViewResults
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(458, 261)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmUserViewResults"
         Me.Text = "Training Logger - View Results"
         Me.TableLayoutPanel1.ResumeLayout(False)
